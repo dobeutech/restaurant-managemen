@@ -265,16 +265,15 @@ import { Button } from '@/components/ui/button';
 ### Working with KV Store
 
 ```typescript
-import { useKV } from '@github/spark';
+import { useKV } from '@github/spark/hooks';
 
 function MyComponent() {
-  const { data, isLoading } = useKV<MyType>('my-key');
+  const [data, setData] = useKV<MyType>('my-key', defaultValue);
   
-  const updateData = async () => {
-    await setKV('my-key', newValue);
+  const updateData = () => {
+    setData(newValue);
   };
   
-  if (isLoading) return <LoadingSpinner />;
   return <div>{/* use data */}</div>;
 }
 ```
