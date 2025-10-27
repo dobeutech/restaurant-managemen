@@ -27,7 +27,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  const login = async (username: string, password: string): Promise<boolean> => {
+  const login = async (username: string, _password: string): Promise<boolean> => {
+    // NOTE: Demo authentication - password is not validated
+    // In production, this MUST be replaced with proper authentication
     const foundUser = users?.find((u) => u.username === username);
     
     if (foundUser) {
