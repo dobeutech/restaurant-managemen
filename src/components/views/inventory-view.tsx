@@ -25,8 +25,6 @@ export function InventoryView({ locationId }: InventoryViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('all');
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
-  // editingItem state is reserved for future edit functionality
-  const [_editingItem, _setEditingItem] = useState<InventoryItem | null>(null);
 
   const locationInventory = inventory?.filter(item => item.locationId === locationId) || [];
 
