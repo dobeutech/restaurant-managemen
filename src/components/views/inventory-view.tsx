@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useKV } from '@github/spark/hooks';
 import { InventoryItem } from '@/lib/types';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
@@ -25,7 +25,6 @@ export function InventoryView({ locationId }: InventoryViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterCategory, setFilterCategory] = useState('all');
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
-  const [editingItem, setEditingItem] = useState<InventoryItem | null>(null);
 
   const locationInventory = inventory?.filter(item => item.locationId === locationId) || [];
 

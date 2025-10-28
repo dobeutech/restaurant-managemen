@@ -25,6 +25,10 @@ dist-ssr
 *.sw?
 
 .env
+.env.local
+.env.production
+.env.staging
+.env.development
 **/agent-eval-report*
 packages
 pids
@@ -32,3 +36,18 @@ pids
 .devcontainer/
 
 .spark-workbench-id
+
+# Security and sensitive files
+*.pem
+*.key
+*.cert
+secrets/
+.secrets
+
+# Build artifacts
+coverage/
+.nyc_output/
+
+# Testing
+test-results/
+playwright-report/
